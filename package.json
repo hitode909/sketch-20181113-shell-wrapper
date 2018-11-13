@@ -1,0 +1,23 @@
+{
+  "name": "shell-history-to-dynamodb",
+  "version": "1.0.0",
+  "bin": {
+    "shell-history-to-dynamodb": "./bin/shell-history-to-dynamodb"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.6",
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-merge": "^4.1.4"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "prepare": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.dev.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
