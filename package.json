@@ -19,5 +19,8 @@
     "prepare": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.dev.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.354.0"
   }
 }

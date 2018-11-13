@@ -1,3 +1,5 @@
+import * as AWS from 'aws-sdk';
+
 import { Executor } from './Executor';
 
 const parameters = process.argv.slice(2);
@@ -12,5 +14,11 @@ const parameters = process.argv.slice(2);
     process.exit(1);
   }
   console.log(result);
-  process.exit(0);
+
+  const dynamodb = new AWS.DynamoDB();
+
+  console.log(1);
+  const list = await dynamodb.listTables().promise();
+  console.log(list);
+  console.log(2);
 })();
