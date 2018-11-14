@@ -13,12 +13,14 @@ const parameters = process.argv.slice(2);
     console.warn(error);
     process.exit(1);
   }
-  console.log(result);
 
-  const dynamodb = new AWS.DynamoDB();
+  const documentClient = new AWS.DynamoDB.DocumentClient({
+    convertEmptyValues: true,
+  });
 
-  console.log(1);
-  const list = await dynamodb.listTables().promise();
-  console.log(list);
-  console.log(2);
+  const putDocument = {
+    TableName: 'shell-history',
+    Item: result as Object,
+  };
+  await documentClient.put(putDocument).promise();
 })();
